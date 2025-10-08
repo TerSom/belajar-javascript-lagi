@@ -1,18 +1,18 @@
-// const judul = document.getElementById("judul")
-// judul.innerHTML = "GG GAMING"
+const judul = document.getElementById("judul")
+judul.innerHTML = "GG GAMING"
 
-// const sectionA = document.querySelector("section#a")
-// console.table(sectionA)
-// sectionA.innerHTML = "hello world"
+const sectionA = document.querySelector("section#a")
+console.table(sectionA)
+sectionA.innerHTML = "hello world"
 
-// const judul = document.querySelector("#judul")
-// judul.style.color = "lightblue"
-// judul.style.backgroundColor = "tomato"
+const judul = document.querySelector("#judul")
+judul.style.color = "lightblue"
+judul.style.backgroundColor = "tomato"
 
-// const judul = document.querySelector("#judul")
-// judul.setAttribute("href" ,"http://instagram.com/sandhikagalih")
-// console.log(judul.getAttribute("href"))
-// judul.removeAttribute("href")
+const judul = document.querySelector("#judul")
+judul.setAttribute("href" ,"http://instagram.com/sandhikagalih")
+console.log(judul.getAttribute("href"))
+judul.removeAttribute("href")
 
 const p1 = document.querySelector(".p1")
 p1.classList.add("kocak")
