@@ -5,5 +5,5 @@ for (let data of person){
 
 const fullName = "terry somay gg"
 for(let fullnameleght of fullName){
-    console.log(`nama terring satu huruf ${fullnameleght}`)
+    console.log(`nama terring satu husruf ${fullnameleght}`)
 }
