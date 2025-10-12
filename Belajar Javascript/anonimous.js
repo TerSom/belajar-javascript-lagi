@@ -10,5 +10,5 @@ function giveMeName(callback){
 
 giveMeName(sapa)
 giveMeName(function (name){
-    console.log(`halo ${name}`)
+    console.log(`halos ${name}`)
 })
