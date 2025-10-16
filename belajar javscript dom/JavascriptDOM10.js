@@ -2,7 +2,8 @@ const container = document.querySelector(".container")
 
 container.addEventListener("click",(event) => {
     if (event.target.className = "close"){
-        event.target.parentElement.style.display = "none" 
+        event.target.parentElement.style.display = "none"
+        preventDefault() 
     }
 })
 
