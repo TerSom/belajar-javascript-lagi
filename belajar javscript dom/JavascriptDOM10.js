@@ -1,13 +1,28 @@
-const close = document.querySelectorAll(".close")
-const card = document.querySelector(".card")
+const container = document.querySelector(".container")
 
-close.forEach((el) => {
-    el.addEventListener("click", (e) => {
-        e.target.parentElement.style.display = "none"
-        e.preventDefault()
-    })
+container.addEventListener("click",(event) => {
+    if (event.target.className = "close"){
+        event.target.parentElement.style.display = "none" 
+    }
 })
 
+// const close = document.querySelectorAll(".close");
+
+// close.forEach((el) => {
+//   el.addEventListener("click", (e) => {
+//     e.target.parentElement.style.display = "none";
+//     e.preventDefault();
+//     e.stopPropagation();
+//   });
+// });
+
+// const cards = document.querySelectorAll(".card");
+
+// cards.forEach((el) => {
+//   el.addEventListener("click", () => {
+//     alert("kocak");
+//   });
+// });
 
 // close.addEventListener("click",() => {
 //     card.style.display = "none"
