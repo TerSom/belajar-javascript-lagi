@@ -1,5 +1,5 @@
 let sapa = function (name){
-    console.log(`halso ${name}`)
+    console.log(`halo ${name}`)
 }
 
 sapa("terry")
