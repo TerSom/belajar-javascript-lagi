@@ -43,7 +43,6 @@
 // const umay = mahasiswa("umay",20)
 
 // Constracture function
-
 function Mahasiswa(nama,energi) {
     this.nama = nama
     this.energi = energi
