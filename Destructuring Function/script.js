@@ -23,7 +23,7 @@
 const mhs1 = {
     nama : "terry",
     umur : 17,
-    email : "umaysomay@gmail.com",
+    email : "umsaysomay@gmail.com",
     nilai : {
         tugas : 80,
         uts : 90,
