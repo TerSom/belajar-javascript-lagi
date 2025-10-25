@@ -1,0 +1,37 @@
+[
+  {
+    "nama": "Sandhika Galih",
+    "nrp": "043040023",
+    "email": "sandhikagalih@unpas.ac.id",
+    "jurusan": "Teknik Informatika",
+    "idDosenWali": 1
+  },
+  {
+    "nama": "Terry Wahyudi",
+    "nrp": "043040024",
+    "email": "terrywahyudi@unpas.ac.id",
+    "jurusan": "Rekayasa Perangkat Lunak",
+    "idDosenWali": 2
+  },
+  {
+    "nama": "Fadli Akbar",
+    "nrp": "043040025",
+    "email": "fadli.akbar@unpas.ac.id",
+    "jurusan": "Sistem Informasi",
+    "idDosenWali": 1
+  },
+  {
+    "nama": "Rina Putri",
+    "nrp": "043040026",
+    "email": "rina.putri@unpas.ac.id",
+    "jurusan": "Teknik Komputer",
+    "idDosenWali": 3
+  },
+  {
+    "nama": "Bagus Setiawan",
+    "nrp": "043040027",
+    "email": "bagus.setiawan@unpas.ac.id",
+    "jurusan": "Teknologi Informasi",
+    "idDosenWali": 2
+  }
+]
