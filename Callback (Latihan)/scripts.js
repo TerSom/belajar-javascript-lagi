@@ -34,45 +34,78 @@
 //     .catch((err) => console.error(err));
 // });
 
-const searchButton = document.querySelector(".search-button")
-searchButton.addEventListener("click", async function() {
-    const inputKeyword = document.querySelector(".input-keyword")
-    const movie = await getMovie(inputKeyword.value)
-    updateUI(movie)
-})
+const searchButton = document.querySelector(".search-button");
+searchButton.addEventListener("click", async function () {
+  try {
+    const inputKeyword = document.querySelector(".input-keyword");
+    const movie = await getMovie(inputKeyword.value);
+    updateUI(movie);
+  } catch (err) {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Something went wrong!",
+      footer: err,
+    });
+  }
+});
 
 function getMovie(keyword) {
-    return fetch("https://www.omdbapi.com/?apikey=4395c2e7&s=" + keyword)
-        .then((res) => res.json())
-        .then((m) => m.Search)
+  return fetch("https://www.omdbapi.com/?apikey=4395c2e7&s=" + keyword)
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error(res.statusText);
+      }
+      return res.json();
+    })
+    .then((res) => {
+      if (res.Response === "False") {
+        throw new Error(res.Error);
+      }
+      return res.Search;
+    });
 }
 
 function updateUI(movie) {
-    let cards = ``;
-      movie.forEach(movie => cards += showCards(movie));
-      const movieContainer = document.querySelector(".movie-container");
-      movieContainer.innerHTML = cards;
+  let cards = ``;
+  movie.forEach((movie) => (cards += showCards(movie)));
+  const movieContainer = document.querySelector(".movie-container");
+  movieContainer.innerHTML = cards;
 }
 
 // event binding
-document.addEventListener("click", async function(e) {
-    if(e.target.classList.contains('modal-detail-button')){
-        const imdbid = e.target.dataset.imdbid
-        const movieDetail = await getMovieDetail(imdbid)
-        updateUIDetail(movieDetail)
+document.addEventListener("click", async function (e) {
+  if (e.target.classList.contains("modal-detail-button")) {
+    try {
+      const imdbid = e.target.dataset.imdbid;
+      const movieDetail = await getMovieDetail(imdbid);
+      updateUIDetail(movieDetail);
+    } catch (err) {
+      alert(err);
     }
-})
+  }
+});
 
 function getMovieDetail(imdbid) {
-    return fetch("https://www.omdbapi.com/?apikey=4395c2e7&i=" + imdbid)
-        .then((res) => res.json())
-        .then((m) => m)
+  return fetch("https://www.omdbapi.com/?apikey=4395c2e7&i=" + imdbid)
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error(res.statusText);
+      }
+      return res.json();
+    })
+    .then((res) => {
+      if (res.Response === "False") {
+        throw new Error(res.Error);
+      }
+      return res;
+    });
 }
 
-function updateUIDetail(m){
-    const movieDetail = ShowMovieDetail(m);
-    const modalBody = document.querySelector(".modal-body");
-    modalBody.innerHTML = movieDetail;
+function updateUIDetail(m) {
+  const movieDetail = ShowMovieDetail(m);
+  const modalBody = document.querySelector(".modal-body");
+  modalBody.innerHTML = movieDetail;
 }
 
 function showCards(m) {

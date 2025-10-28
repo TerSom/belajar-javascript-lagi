@@ -30,7 +30,7 @@ async function cobaAsyncAwait() {
         const coba = await cobaPromise()
         console.log(coba)
     }catch(err){
-        console.error(err)
+        console.erro(err)
     }
 }
 
